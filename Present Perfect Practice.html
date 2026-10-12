@@ -1,0 +1,371 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Present Perfect Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one reading column — guide first (study), then numbered exercises, sticky score bar at the bottom */
+:root{
+  --bg:#F3F6F8; --paper:#FFFFFF; --ink:#18233A; --muted:#5A6577; --line:#D9E0E7;
+  --accent:#1D5FA8; --accent-soft:#E3EDF8; --hl:#F2B632; --hl-soft:#FFF3D1;
+  --ok:#1E8A55; --ok-soft:#E1F4EA; --bad:#C2413A; --bad-soft:#FBE7E5;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1522; --paper:#172033; --ink:#E7ECF4; --muted:#9AA6B8; --line:#2A364D;
+  --accent:#7FB2EE; --accent-soft:#1D2D47; --hl:#F2B632; --hl-soft:#3A3018;
+  --ok:#5CCB93; --ok-soft:#163327; --bad:#F08A82; --bad-soft:#3A1E1D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1522; --paper:#172033; --ink:#E7ECF4; --muted:#9AA6B8; --line:#2A364D;
+  --accent:#7FB2EE; --accent-soft:#1D2D47; --hl:#F2B632; --hl-soft:#3A3018;
+  --ok:#5CCB93; --ok-soft:#163327; --bad:#F08A82; --bad-soft:#3A1E1D; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 120px;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(1.9rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.45rem;font-weight:800}
+h3{font-size:1.05rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.lead{color:var(--muted);max-width:62ch}
+header{display:flex;flex-direction:column;gap:10px}
+.formula-hero{font-family:var(--f-mono);font-weight:700;font-size:clamp(1rem,3.2vw,1.3rem);background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;width:fit-content;max-width:100%}
+.tok{padding:2px 8px;border-radius:6px}
+.t-s{background:var(--accent-soft);color:var(--accent)}
+.t-h{background:var(--hl-soft)}
+.t-v{background:var(--ok-soft);color:var(--ok)}
+.name-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.name-row label{font-weight:600}
+input[type=text]{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:6px 10px}
+input[type=text]:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+section.block{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px}
+.part-label{display:flex;gap:12px;align-items:baseline}
+.part-label .num{font-family:var(--f-mono);font-weight:700;color:var(--accent);font-size:.9rem}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+.tbl{overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+td.form{font-family:var(--f-mono);font-size:.88rem;white-space:nowrap}
+.ex{color:var(--muted);font-style:italic}
+b.k{color:var(--accent)}
+.uses{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.use{border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.use .tag{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.use ul{margin:0;padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.85rem;padding:3px 10px;border-radius:99px;background:var(--hl-soft);border:1px solid var(--line)}
+.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.compare>div{border-radius:10px;padding:14px;background:var(--bg);min-width:0}
+.mistakes{display:flex;flex-direction:column;gap:10px}
+.mk{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mk>div{padding:8px 12px;border-radius:8px;font-size:.95rem;min-width:0}
+.mk .no{background:var(--bad-soft)} .mk .no::before{content:"✗ ";color:var(--bad);font-weight:800}
+.mk .yes{background:var(--ok-soft)} .mk .yes::before{content:"✓ ";color:var(--ok);font-weight:800}
+.note{font-size:.92rem;background:var(--accent-soft);border-radius:8px;padding:10px 14px}
+svg text{fill:var(--ink);font-family:var(--f-body)}
+.divider{display:flex;align-items:center;gap:14px;margin-top:8px}
+.divider::after{content:"";flex:1;height:2px;background:var(--line)}
+/* exercises */
+.instr{color:var(--muted)}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px}
+.wordbank span{font-family:var(--f-mono);font-size:.85rem;border:1.5px dashed var(--line);border-radius:6px;padding:2px 8px}
+ol.items{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:it}
+ol.items li{counter-increment:it;display:grid;grid-template-columns:2em 1fr;gap:4px;align-items:start}
+ol.items li::before{content:counter(it);font-family:var(--f-mono);font-weight:700;color:var(--muted);padding-top:4px}
+.ctx{color:var(--muted);font-size:.94rem}
+.line{line-height:2.2}
+.line input[type=text]{min-width:9ch;padding:3px 8px;margin:0 2px}
+.line input.wide{width:min(100%,24em)}
+.line select{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:3px 6px;margin:0 2px}
+.is-ok{border-color:var(--ok)!important;background:var(--ok-soft)!important}
+.is-bad{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+.fix{display:inline-block;font-size:.85rem;color:var(--ok);font-weight:600;margin-left:6px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:inherit;font-weight:600;border-radius:8px;padding:8px 16px;cursor:pointer;border:1.5px solid var(--accent)}
+button.primary{background:var(--accent);color:var(--paper)}
+button.ghost{background:transparent;color:var(--accent)}
+button:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
+.score{font-family:var(--f-mono);font-weight:700;font-variant-numeric:tabular-nums}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.bar .in{max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.meter{flex:1;min-width:120px;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--ok);transition:width .4s}
+#summary{background:var(--hl-soft);border-radius:10px;padding:14px 16px}
+@media (max-width:560px){.mk{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.meter i{transition:none}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Grammar · A2–B1 · Thì hiện tại hoàn thành</span>
+  <h1>Present Perfect: I have done</h1>
+  <p class="lead">Đọc phần hướng dẫn trước, sau đó làm 7 bài tập bên dưới. Làm hết các bài, sau đó bấm <b>Nộp bài</b> ở cuối trang. Điểm và đáp án chỉ hiện ra sau khi nộp bài, nên em hãy kiểm tra kỹ trước khi nộp.</p>
+  <div class="name-row"><label for="stname">Họ tên:</label><input type="text" id="stname" placeholder="Nhập tên của em" autocomplete="off"></div>
+</header>
+
+<!-- ================= GUIDE ================= -->
+<div class="divider"><h2>Phần 1 · Hướng dẫn</h2></div>
+
+<section class="block">
+  <div class="part-label"><span class="num">A</span><h3>Cấu trúc câu</h3></div>
+  <div class="formula-hero"><span class="tok t-s">S</span>+<span class="tok t-h">have / has</span>+<span class="tok t-v">V3 (past participle)</span></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Loại câu</th><th>Công thức</th><th>Ví dụ</th></tr></thead>
+    <tbody>
+      <tr><td><b>Khẳng định (+)</b></td><td class="form">S + have/has + V3</td><td>I <b class="k">have finished</b>. / She<b class="k">'s left</b>.</td></tr>
+      <tr><td><b>Phủ định (−)</b></td><td class="form">S + haven't/hasn't + V3</td><td>We <b class="k">haven't eaten</b> yet.</td></tr>
+      <tr><td><b>Nghi vấn (?)</b></td><td class="form">Have/Has + S + V3 …?</td><td><b class="k">Has</b> he <b class="k">called</b>? — Yes, he has. / No, he hasn't.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="compare">
+    <div><b>have</b> → I, you, we, they<br><span class="ex">I've = I have · they've = they have</span></div>
+    <div><b>has</b> → he, she, it, danh từ số ít<br><span class="ex">he's = he has · Linh's = Linh has</span></div>
+    <div><b>V3</b> → động từ có quy tắc: thêm <b>-ed</b> (worked, studied). Bất quy tắc: học thuộc cột 3 (go → <b>gone</b>, see → <b>seen</b>, write → <b>written</b>).</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="part-label"><span class="num">B</span><h3>Khi nào dùng?</h3></div>
+  <p>Hiện tại hoàn thành nối <b>quá khứ</b> với <b>hiện tại</b>. Việc đã xảy ra, nhưng người nói đang quan tâm tới <b>bây giờ</b>.</p>
+  <div class="tbl">
+  <svg viewBox="0 0 640 120" width="100%" style="min-width:420px;max-width:640px" role="img" aria-label="Timeline: an action in the past with a result now">
+    <line x1="30" y1="70" x2="610" y2="70" stroke="var(--muted)" stroke-width="2"/>
+    <polygon points="610,64 622,70 610,76" fill="var(--muted)"/>
+    <text x="30" y="100" font-size="13">past (quá khứ)</text>
+    <line x1="500" y1="40" x2="500" y2="90" stroke="var(--accent)" stroke-width="3"/>
+    <text x="482" y="108" font-size="13" font-weight="600">NOW</text>
+    <circle cx="260" cy="70" r="8" fill="var(--hl)"/>
+    <text x="196" y="42" font-size="13">I lost my key</text>
+    <path d="M268 62 Q380 10 492 58" fill="none" stroke="var(--ok)" stroke-width="2" stroke-dasharray="5 4"/>
+    <polygon points="492,58 486,48 482,58" fill="var(--ok)"/>
+    <text x="330" y="22" font-size="13" font-weight="600">→ I don't have it now</text>
+  </svg></div>
+  <div class="uses">
+    <div class="use"><span class="tag">1 · Kết quả ở hiện tại</span><p>Việc trong quá khứ để lại kết quả <b>bây giờ</b>.</p><ul><li class="ex">I've lost my phone. (= bây giờ không có)</li><li class="ex">She's cut her hair. (= tóc giờ ngắn)</li></ul></div>
+    <div class="use"><span class="tag">2 · Tin mới</span><p>Báo một việc vừa xảy ra, chưa nói thời gian cụ thể.</p><ul><li class="ex">Ow! I've burnt my hand.</li><li class="ex">The shop has closed.</li></ul></div>
+    <div class="use"><span class="tag">3 · Trải nghiệm</span><p>Từ trước tới giờ đã / chưa từng làm gì. Hay đi với <b>ever, never, before</b>.</p><ul><li class="ex">Have you ever eaten durian?</li><li class="ex">I've never been to Huế.</li><li class="ex">It's the best film I've ever seen.</li></ul></div>
+    <div class="use"><span class="tag">4 · Khoảng thời gian chưa kết thúc</span><p>Đi với <b>today, this week, this year, recently, so far, since…</b></p><ul><li class="ex">I've drunk two coffees today.</li><li class="ex">We haven't had any tests so far.</li></ul></div>
+    <div class="use"><span class="tag">5 · "Lần đầu / lần thứ hai…"</span><p><b>It's the first / second time + S + have/has + V3</b></p><ul><li class="ex">It's the first time I've driven a car.</li><li class="ex">This is the third time he's phoned today.</li></ul></div>
+  </div>
+  <p><b>Dấu hiệu nhận biết:</b></p>
+  <div class="chips"><span class="chip">just</span><span class="chip">already</span><span class="chip">yet</span><span class="chip">ever</span><span class="chip">never</span><span class="chip">before</span><span class="chip">recently</span><span class="chip">so far</span><span class="chip">today</span><span class="chip">this week / year</span><span class="chip">since I arrived</span><span class="chip">for ages</span><span class="chip">It's the first time…</span></div>
+</section>
+
+<section class="block">
+  <div class="part-label"><span class="num">C</span><h3>just · already · yet</h3></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Từ</th><th>Nghĩa</th><th>Vị trí</th><th>Ví dụ</th></tr></thead>
+    <tbody>
+      <tr><td><b>just</b></td><td>vừa mới</td><td>giữa have/has và V3</td><td>I've <b class="k">just</b> had lunch.</td></tr>
+      <tr><td><b>already</b></td><td>đã… rồi (sớm hơn mong đợi)</td><td>giữa have/has và V3</td><td>He's <b class="k">already</b> left.</td></tr>
+      <tr><td><b>yet</b></td><td>chưa / … chưa? (đang chờ việc xảy ra)</td><td>cuối câu, chỉ trong câu <b>phủ định</b> và <b>câu hỏi</b></td><td>I haven't finished <b class="k">yet</b>. / Has it stopped raining <b class="k">yet</b>?</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="block">
+  <div class="part-label"><span class="num">D</span><h3>been to hay gone to?</h3></div>
+  <div class="compare">
+    <div><b>has gone to</b> = đã đi và <b>chưa về</b> (đang ở đó hoặc đang trên đường)<br><span class="ex">Nam has gone to Đà Nẵng. (Nam không có ở đây.)</span></div>
+    <div><b>has been to</b> = đã đến và <b>đã quay về</b> (= đã từng ghé thăm)<br><span class="ex">Nam has been to Đà Nẵng. (Giờ Nam ở nhà rồi.)</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="part-label"><span class="num">E</span><h3>Lỗi thường gặp</h3></div>
+  <div class="mistakes">
+    <div class="mk"><div class="no">I have seen him yesterday.</div><div class="yes">I <b>saw</b> him yesterday.</div></div>
+    <div class="mk"><div class="no">She have finished.</div><div class="yes">She <b>has</b> finished.</div></div>
+    <div class="mk"><div class="no">I have went there.</div><div class="yes">I have <b>gone / been</b> there.</div></div>
+    <div class="mk"><div class="no">I've finished my homework yet.</div><div class="yes">I've <b>already</b> finished my homework.</div></div>
+    <div class="mk"><div class="no">It's the first time I drive a car.</div><div class="yes">It's the first time I<b>'ve driven</b> a car.</div></div>
+  </div>
+  <p class="note"><b>Mẹo:</b> Nếu câu có thời gian <b>cụ thể, đã kết thúc</b> (yesterday, last week, in 2020, ago, When…?) → dùng <b>quá khứ đơn</b>. Không dùng hiện tại hoàn thành.</p>
+</section>
+
+<!-- ================= EXERCISES ================= -->
+<div class="divider"><h2>Phần 2 · Bài tập</h2></div>
+<div id="exercises" style="display:flex;flex-direction:column;gap:28px"></div>
+
+<section class="block" id="finish">
+  <h3>Nộp bài</h3>
+  <p class="instr">Bấm <b>Nộp bài</b> để chấm điểm và xem đáp án. Sau khi nộp, em không sửa được câu trả lời nữa. Bấm <b>Sao chép bài làm</b> rồi dán vào tin nhắn Teams gửi cho cô.</p>
+  <div class="actions"><button class="primary" id="submitAll">Nộp bài</button><button class="ghost" id="resetAll">Làm lại từ đầu</button><span class="ctx" id="warn"></span></div>
+  <div id="summary" hidden></div>
+</section>
+</div>
+
+<div class="bar"><div class="in">
+  <span>Điểm: <span class="score" id="tot">0 / 0</span></span>
+  <div class="meter"><i id="meter"></i></div>
+</div></div>
+
+<script>
+const EX = [
+ {id:"e1", title:"Viết dạng V3 (past participle)", instr:"Viết dạng V3 của động từ trong ngoặc.", type:"input", items:[
+  {q:"go → ___", a:["gone"]},{q:"write → ___", a:["written"]},{q:"eat → ___", a:["eaten"]},
+  {q:"see → ___", a:["seen"]},{q:"buy → ___", a:["bought"]},{q:"study → ___", a:["studied"]},
+  {q:"break → ___", a:["broken"]},{q:"take → ___", a:["taken"]},{q:"forget → ___", a:["forgotten"]},
+  {q:"be → ___", a:["been"]} ]},
+ {id:"e2", title:"Kết quả ở hiện tại", instr:"Đọc tình huống. Hoàn thành câu với present perfect của động từ trong ngoặc.", type:"input", items:[
+  {c:"Linh can't open her door. Her keys aren't in her bag.", q:"Linh ___ her keys. (lose)", a:["has lost"]},
+  {c:"There is broken glass on the floor.", q:"Someone ___ the window. (break)", a:["has broken"]},
+  {c:"Minh was 1m50 last year. Now he is 1m65.", q:"Minh ___ a lot. (grow)", a:["has grown"]},
+  {c:"My room was very messy. Now it is clean and tidy.", q:"I ___ my room. (clean)", a:["have cleaned"]},
+  {c:"A bowl of phở was 40,000đ. Now it is 50,000đ.", q:"The price ___. (go up)", a:["has gone up"]},
+  {c:"Hoa was here ten minutes ago. Her bag isn't here now.", q:"Hoa ___. (leave)", a:["has left"]},
+  {c:"Ouch! There's blood on my finger.", q:"I ___ my finger. (cut)", a:["have cut"]},
+  {c:"It was raining this morning. Now the sun is out.", q:"It ___ raining. (stop)", a:["has stopped"]} ]},
+ {id:"e3", title:"been hay gone?", instr:"Chọn been hoặc gone.", type:"select", opts:["been","gone"], items:[
+  {q:"Nam isn't at home. He's ___ to the supermarket.", a:["gone"]},
+  {q:"I've ___ to Đà Lạt three times. I love it there.", a:["been"]},
+  {q:"\"Where's Mum?\" \"She's ___ to work. She'll be back at 6.\"", a:["gone"]},
+  {q:"Have you ever ___ to Japan?", a:["been"]},
+  {q:"Hi! We've just ___ to the cinema. The film was great!", a:["been"]},
+  {q:"The children have ___ to school, so the house is very quiet.", a:["gone"]} ]},
+ {id:"e4", title:"just, already hay yet?", instr:"Chọn từ đúng. Chú ý vị trí của từ trong câu.", type:"select", opts:["just","already","yet"], items:[
+  {q:"I haven't finished my homework ___.", a:["yet"]},
+  {q:"\"Don't forget to call Grandma.\" \"I've ___ called her. I did it this morning.\"", a:["already"]},
+  {q:"Look! It has ___ started to rain. A minute ago it was sunny.", a:["just"]},
+  {q:"Has Lan answered your message ___?", a:["yet"]},
+  {q:"\"Let's watch Episode 5 tonight.\" \"Oh no, I've ___ watched it! Let's watch Episode 6.\"", a:["already"]},
+  {q:"\"Where's Tuấn?\" \"He's ___ gone out. You can still catch him at the gate.\"", a:["just"]},
+  {q:"The class starts at 9:00. It's only 8:40, but the teacher has ___ arrived.", a:["already"]},
+  {q:"We haven't decided where to go on holiday ___.", a:["yet"]} ]},
+ {id:"e5", title:"Trải nghiệm: ever, never", instr:"Câu 1–5: viết câu hỏi với ever. Câu 6–10: hoàn thành câu (khẳng định hoặc phủ định).", type:"input", items:[
+  {q:"(you / eat / durian?) → ___", a:["have you ever eaten durian"], wide:1},
+  {q:"(she / ride / a motorbike?) → ___", a:["has she ever ridden a motorbike"], wide:1},
+  {q:"(you / be / to Hà Nội?) → ___", a:["have you ever been to hà nội","have you ever been to ha noi","have you ever been to hanoi"], wide:1},
+  {q:"(they / see / snow?) → ___", a:["have they ever seen snow"], wide:1},
+  {q:"(your brother / win / a prize?) → ___", a:["has your brother ever won a prize"], wide:1},
+  {c:"\"Do you know Mr Kim?\"", q:"\"No, I ___ him.\" (never / meet)", a:["have never met"]},
+  {c:"\"Is the new café on Lê Lợi street good?\"", q:"\"No idea. I ___ there.\" (not / be)", a:["have not been","haven't been"]},
+  {q:"This is the best book I ___. (ever / read)", a:["have ever read"]},
+  {c:"\"You look tired.\"", q:"\"Yes, I ___ much this week.\" (not / sleep)", a:["have not slept"]},
+  {q:"It's only 2 p.m. and I ___ three cups of tea today! (drink)", a:["have drunk","have had"]} ]},
+ {id:"e6", title:"It's the first time…", instr:"Đọc tình huống và hoàn thành câu.", type:"input", items:[
+  {c:"Anna is on a plane. She is very nervous. She has never flown before.", q:"It's the first time she ___ in a plane.", a:["has flown","has been"]},
+  {c:"Tom is cooking phở. He has never cooked it before.", q:"It's the first time ___ phở.", a:["he has cooked","he has made"]},
+  {c:"My laptop broke down today. It also broke down last month.", q:"This is the second time my laptop ___.", a:["has broken down","has broken"]},
+  {c:"We are at a football stadium. We have never watched a match at a stadium.", q:"We ___ a football match at a stadium before.", a:["have never watched","have never seen","have not watched","have not seen"]},
+  {c:"Lisa is having dinner at a Vietnamese restaurant. She ate there twice before.", q:"This is the third time she ___ here.", a:["has eaten","has had dinner","has been"]} ]},
+ {id:"e7", title:"Hiện tại hoàn thành hay quá khứ đơn?", instr:"Chọn đáp án đúng. Nhớ: thời gian cụ thể trong quá khứ → quá khứ đơn.", type:"select", items:[
+  {q:"I ___ my phone yesterday, but I found it this morning.", opts:["lost","have lost"], a:["lost"]},
+  {q:"I ___ my phone. Can you help me find it?", opts:["lost","have lost"], a:["have lost"]},
+  {q:"She ___ to London in 2019.", opts:["went","has gone"], a:["went"]},
+  {q:"___ sushi? I think you'd like it.", opts:["Did you ever eat","Have you ever eaten"], a:["Have you ever eaten"]},
+  {q:"It's good to see you! We ___ each other for a long time.", opts:["didn't see","haven't seen"], a:["haven't seen"]},
+  {q:"When ___ you arrive in Chemnitz?", opts:["did","have"], a:["did"]} ]}
+];
+
+function norm(s){
+  return (s||"").toLowerCase().replace(/[’‘`]/g,"'")
+    .replace(/\bwon't\b/g,"will not").replace(/\bcan't\b/g,"cannot")
+    .replace(/n't\b/g," not").replace(/'ve\b/g," have").replace(/'s\b/g," has")
+    .replace(/[.,!?;:"“”()]/g," ").replace(/\s+/g," ").trim();
+}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+
+const root=document.getElementById("exercises");
+EX.forEach((ex,ei)=>{
+  const sec=document.createElement("section");sec.className="block";sec.id=ex.id;
+  let bank="";
+  if(ex.type==="select"&&ex.opts) bank=`<div class="wordbank">${ex.opts.map(o=>`<span>${o}</span>`).join("")}</div>`;
+  const items=ex.items.map((it,ii)=>{
+    const fid=`${ex.id}_${ii}`;
+    let ctrl;
+    if(ex.type==="input"){
+      ctrl=`<input type="text" id="${fid}" class="${it.wide?'wide':''}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Answer ${ii+1}">`;
+    }else{
+      const opts=it.opts||ex.opts;
+      ctrl=`<select id="${fid}" aria-label="Answer ${ii+1}"><option value="">— chọn —</option>${opts.map(o=>`<option>${o}</option>`).join("")}</select>`;
+    }
+    const line=esc(it.q).replace("___",ctrl);
+    return `<li><div>${it.c?`<div class="ctx">${esc(it.c)}</div>`:""}<div class="line">${line}<span class="fix" id="${fid}_fix"></span></div></div></li>`;
+  }).join("");
+  sec.innerHTML=`<div class="part-label"><span class="num">${ei+1}</span><h3>${ex.title}</h3></div>
+    <p class="instr">${ex.instr}</p>${bank}<ol class="items">${items}</ol>
+    <div class="actions"><button class="ghost" data-clear="${ei}">Xoá bài này</button><span class="score" id="${ex.id}_score"></span></div>`;
+  root.appendChild(sec);
+});
+
+const results={};
+function check(ei){
+  const ex=EX[ei];let ok=0;
+  ex.items.forEach((it,ii)=>{
+    const el=document.getElementById(`${ex.id}_${ii}`),fix=document.getElementById(`${ex.id}_${ii}_fix`);
+    const v=norm(el.value);const good=it.a.some(a=>norm(a)===v);
+    el.classList.toggle("is-ok",good);el.classList.toggle("is-bad",!good);el.disabled=true;
+    fix.textContent=good?"":"→ "+it.a[0];
+    if(good)ok++;
+  });
+  results[ex.id]=ok;
+  document.getElementById(`${ex.id}_score`).textContent=`${ok} / ${ex.items.length}`;
+  updateTotal();return ok;
+}
+function clearEx(ei){
+  const ex=EX[ei];
+  ex.items.forEach((it,ii)=>{const el=document.getElementById(`${ex.id}_${ii}`);el.value="";el.disabled=false;el.classList.remove("is-ok","is-bad");document.getElementById(`${ex.id}_${ii}_fix`).textContent="";});
+  delete results[ex.id];document.getElementById(`${ex.id}_score`).textContent="";updateTotal();
+}
+const MAX=EX.reduce((n,e)=>n+e.items.length,0);
+function updateTotal(){
+  const s=Object.values(results).reduce((a,b)=>a+b,0);
+  document.getElementById("tot").textContent=`${s} / ${MAX}`;
+  document.getElementById("meter").style.width=(s/MAX*100)+"%";
+}
+updateTotal();
+document.addEventListener("click",e=>{
+  const r=e.target.closest("[data-clear]");if(r&&!submitted)clearEx(+r.dataset.clear);
+});
+
+let submitted=false,warned=false;
+const submitBtn=document.getElementById("submitAll"),warn=document.getElementById("warn");
+submitBtn.addEventListener("click",()=>{
+  if(submitted)return;
+  const blanks=EX.reduce((n,e)=>n+e.items.filter((_,ii)=>!document.getElementById(`${e.id}_${ii}`).value.trim()).length,0);
+  if(blanks&&!warned){warned=true;warn.textContent=`Em còn ${blanks} câu chưa làm. Bấm Nộp bài lần nữa nếu vẫn muốn nộp.`;return;}
+  warn.textContent="";submitted=true;submitBtn.disabled=true;submitBtn.textContent="Đã nộp bài";
+  document.querySelectorAll("[data-clear]").forEach(b=>b.hidden=true);
+  document.getElementById("stname").disabled=true;
+  EX.forEach((_,i)=>check(i));
+  const s=Object.values(results).reduce((a,b)=>a+b,0);
+  const name=document.getElementById("stname").value.trim()||"(chưa nhập tên)";
+  const pct=Math.round(s/MAX*100);
+  const msg=pct>=85?"Xuất sắc! 🎉":pct>=65?"Tốt lắm! Xem lại các câu sai (tô đỏ) và đáp án bên cạnh nhé.":"Em xem đáp án bên cạnh các câu sai, rồi đọc lại phần hướng dẫn nhé.";
+  const now=new Date().toLocaleString("vi-VN");
+  const lines=EX.map((e,i)=>{
+    const det=e.items.map((it,ii)=>{
+      const v=document.getElementById(`${e.id}_${ii}`).value.trim();
+      const good=it.a.some(a=>norm(a)===norm(v));
+      return `  ${ii+1}. ${good?"✓":"✗"} ${v||"(bỏ trống)"}${good?"":`  [đáp án: ${it.a[0]}]`}`;
+    }).join("\n");
+    return `Bài ${i+1} – ${e.title}: ${results[e.id]}/${e.items.length}\n${det}`;
+  }).join("\n\n");
+  const text=`PRESENT PERFECT – BÀI LÀM\nHọc sinh: ${name}\nNộp lúc: ${now}\nTổng điểm: ${s}/${MAX} (${pct}%)\n\n${lines}`;
+  const box=document.getElementById("summary");box.hidden=false;
+  box.innerHTML=`<p><b>${esc(name)}</b>: <span class="score">${s} / ${MAX}</span> (${pct}%). ${msg}</p>
+    <div class="actions" style="margin:10px 0"><button class="primary" id="copyRes">Sao chép bài làm gửi cô</button> <span id="copied" class="ctx"></span></div>
+    <pre id="restext" style="white-space:pre-wrap;font-family:var(--f-mono);font-size:.82rem;margin:0;max-height:320px;overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px">${esc(text)}</pre>`;
+  document.getElementById("copyRes").onclick=()=>{
+    const done=()=>document.getElementById("copied").textContent="Đã sao chép.";
+    navigator.clipboard.writeText(text).then(done).catch(()=>{
+      const r=document.createRange();r.selectNodeContents(document.getElementById("restext"));
+      const sel=getSelection();sel.removeAllRanges();sel.addRange(r);
+      document.getElementById("copied").textContent="Đã chọn sẵn, hãy nhấn Ctrl/Cmd + C.";
+    });
+  };
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+});
+const resetBtn=document.getElementById("resetAll");let armed=false;
+resetBtn.addEventListener("click",()=>{
+  if(!armed){armed=true;resetBtn.textContent="Bấm lần nữa để xoá hết";setTimeout(()=>{armed=false;resetBtn.textContent="Làm lại từ đầu"},3000);return;}
+  EX.forEach((_,i)=>clearEx(i));document.getElementById("summary").hidden=true;armed=false;resetBtn.textContent="Làm lại từ đầu";
+  submitted=false;warned=false;warn.textContent="";submitBtn.disabled=false;submitBtn.textContent="Nộp bài";
+  document.querySelectorAll("[data-clear]").forEach(b=>b.hidden=false);document.getElementById("stname").disabled=false;
+});
+</script>
+
+</body></html>
